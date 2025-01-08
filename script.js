@@ -6,11 +6,14 @@ const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no nome "PAWLY"
 nameElement.addEventListener('click', () => {
-    // Abre as portas
-    leftDoor.style.transform = 'rotateY(-90deg)';
-    rightDoor.style.transform = 'rotateY(90deg)';
+    // Faz o nome desaparecer
+    nameElement.style.opacity = '0';
 
-    // Aguarda a animação das portas antes de desaparecer
+    // Abre as portas (de dentro para as extremidades)
+    leftDoor.style.transform = 'rotateY(90deg)';
+    rightDoor.style.transform = 'rotateY(-90deg)';
+
+    // Aguarda a animação das portas antes de fazê-las desaparecer
     setTimeout(() => {
         leftDoor.classList.add('hidden');
         rightDoor.classList.add('hidden');
