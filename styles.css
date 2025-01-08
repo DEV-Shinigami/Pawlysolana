@@ -2,39 +2,24 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradiente azul para roxo */
+    background: #000; /* Fundo preto inicial */
     color: #fff;
     overflow: hidden;
 }
 
-/* Nome "PAWLY" */
-.name {
+/* Olho do animal */
+.eye {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 400px; /* Tamanho inicial do olho */
+    height: 400px;
     transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: #fff;
-    z-index: 10;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-.name:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Portal (GIF com transparência no fundo) */
-.portal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80%; /* Tamanho do portal */
-    height: 80%;
-    transform: translate(-50%, -50%); /* Centraliza o portal */
-    background: url('./portal.gif') center/contain no-repeat; /* Portal GIF com transparência */
+    background: url('./olho.webp') center/cover no-repeat; /* Substituir pelo arquivo webp */
+    border-radius: 50%; /* Faz o olho ser circular */
     z-index: 5;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Suavidade do zoom */
+    transition: transform 1.5s ease-in-out, opacity 1s ease-in-out; /* Suavidade no zoom */
+    cursor: pointer; /* Indica que o olho é clicável */
 }
 
 /* Site principal */
