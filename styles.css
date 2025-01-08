@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #222, #444);
+}
+
+.door {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    background: #ffcc00;
+    color: #222;
+    font-size: 5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: right;
+    transform: rotateY(0deg);
+    transition: transform 1s ease-in-out;
+}
+
+.door.right {
+    left: 50%;
+    transform-origin: left;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.site-content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.site-content.visible {
+    opacity: 1;
+}
