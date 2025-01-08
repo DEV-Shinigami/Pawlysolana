@@ -16,37 +16,37 @@ body {
     color: #fff;
     z-index: 10;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .name:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portas */
+/* Portas com imagens */
 .door {
     position: absolute;
     width: 50%;
     height: 100vh;
-    background: #ffcc00;
-    transform-origin: right;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
     transform: rotateY(0deg);
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .door.left {
     left: 0;
-    transform-origin: right;
+    background-image: url('left-door.jpg'); /* Substitua pelo caminho da imagem da porta esquerda */
 }
 
 .door.right {
     left: 50%;
-    transform-origin: left;
+    background-image: url('right-door.jpg'); /* Substitua pelo caminho da imagem da porta direita */
 }
 
 .door.hidden {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 /* Container da porta */
