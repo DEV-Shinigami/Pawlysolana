@@ -2,24 +2,23 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #000; /* Fundo preto inicial */
+    background: url('./olho.webp') center/cover no-repeat; /* Imagem de fundo com o olho */
     color: #fff;
     overflow: hidden;
 }
 
-/* Olho do animal */
-.eye {
+/* Área clicável do olho */
+.eye-area {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px; /* Tamanho inicial do olho */
-    height: 400px;
+    top: 50%; /* Ajuste conforme necessário */
+    left: 50%; /* Ajuste conforme necessário */
+    width: 15%; /* Largura da área clicável, ajustada ao tamanho do olho */
+    height: 15%; /* Altura da área clicável */
     transform: translate(-50%, -50%);
-    background: url('./olho.webp') center/cover no-repeat; /* Substituir pelo arquivo webp */
-    border-radius: 50%; /* Faz o olho ser circular */
-    z-index: 5;
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer;
+    z-index: 10;
     transition: transform 1.5s ease-in-out, opacity 1s ease-in-out; /* Suavidade no zoom */
-    cursor: pointer; /* Indica que o olho é clicável */
 }
 
 /* Site principal */
