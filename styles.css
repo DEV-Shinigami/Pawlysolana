@@ -23,41 +23,6 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portas com imagens */
-.door {
-    position: absolute;
-    width: 50%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    transform-origin: center;
-    transform: rotateY(0deg);
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-}
-
-.door.left {
-    left: 0;
-    background-image: url('left-door.jpg'); /* Substitua pelo caminho da imagem da porta esquerda */
-}
-
-.door.right {
-    left: 50%;
-    background-image: url('right-door.jpg'); /* Substitua pelo caminho da imagem da porta direita */
-}
-
-.door.hidden {
-    opacity: 0;
-}
-
-/* Container da porta */
-.container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000px;
-}
-
 /* Conteúdo principal do site */
 .site-content {
     opacity: 0;
