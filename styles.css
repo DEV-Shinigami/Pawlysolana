@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
     margin: 0;
     overflow: hidden;
@@ -5,20 +6,37 @@ body {
     background: linear-gradient(to bottom, #222, #444);
 }
 
+/* Nome "PAWLY" no centro */
+.name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.name:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Portas */
 .door {
     position: absolute;
     width: 50%;
     height: 100vh;
     background: #ffcc00;
-    color: #222;
-    font-size: 5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transform-origin: right;
     transform: rotateY(0deg);
     transition: transform 1s ease-in-out;
+}
+
+.door.left {
+    left: 0;
+    transform-origin: right;
 }
 
 .door.right {
@@ -26,19 +44,26 @@ body {
     transform-origin: left;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    perspective: 1000px;
-}
-
-.site-content {
+.door.hidden {
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-.site-content.visible {
-    opacity: 1;
+/* Container da porta */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* Conteúdo principal do site */
+.site-content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    position: relative;
 }
