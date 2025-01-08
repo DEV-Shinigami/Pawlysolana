@@ -24,41 +24,27 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portais */
+/* Portal */
 .portal {
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 200px;
     height: 200px;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.5);
-    animation: pulse 2s infinite;
+    background: conic-gradient(from 0deg, red, orange, yellow, green, cyan, blue, violet, red);
+    animation: spin 2s linear infinite;
     z-index: 5;
 }
 
-.portal-left {
-    left: 30%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
-}
-
-.portal-right {
-    left: 70%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-/* Animação dos portais */
-@keyframes pulse {
+/* Animação do portal */
+@keyframes spin {
     0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-        transform: scale(1);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
