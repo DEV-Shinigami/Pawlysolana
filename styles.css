@@ -2,9 +2,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom, #222, #444);
+    background: radial-gradient(circle, #000, #111);
     color: #fff;
+    overflow: hidden;
 }
 
 /* Nome "PAWLY" */
@@ -24,7 +24,45 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Conteúdo principal */
+/* Portais */
+.portal {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    animation: pulse 2s infinite;
+    z-index: 5;
+}
+
+.portal-left {
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.portal-right {
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Animação dos portais */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Site principal */
 .site-content {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -62,26 +100,6 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #ffcc00;
-}
-
-/* Seções */
-section {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-#home {
-    background: #444;
-    padding: 4rem 2rem;
-}
-
-#features ul {
-    list-style: none;
-    padding: 0;
-}
-
-#features ul li {
-    padding: 0.5rem 0;
 }
 
 /* Formulário */
