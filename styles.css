@@ -24,7 +24,7 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portal */
+/* Portal (GIF) */
 .portal {
     position: absolute;
     top: 50%;
@@ -32,52 +32,8 @@ body {
     width: 400px;
     height: 400px;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 10px solid transparent;
-    background: transparent;
-    animation: spin 3s linear infinite;
     z-index: 5;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-/* Animação do contorno do portal */
-@keyframes spin {
-    0% {
-        border-color: rgba(255, 0, 255, 0.5);
-    }
-    25% {
-        border-color: rgba(0, 255, 255, 0.5);
-    }
-    50% {
-        border-color: rgba(255, 255, 0, 0.5);
-    }
-    75% {
-        border-color: rgba(255, 0, 0, 0.5);
-    }
-    100% {
-        border-color: rgba(255, 0, 255, 0.5);
-    }
-}
-
-/* Fagulhas ao redor do portal */
-.spark {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: orbit 3s linear infinite;
-    pointer-events: none;
-}
-
-/* Animação das fagulhas */
-@keyframes orbit {
-    0% {
-        transform: rotate(0deg) translateX(200px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(200px) rotate(-360deg);
-    }
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 /* Site principal */
