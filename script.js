@@ -5,8 +5,7 @@ const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no nome "PAWLY"
 nameElement.addEventListener('click', () => {
-    // Remove o portal com expansão e suavidade
-    portal.style.transform = 'scale(10)';
+    // Remove o portal com suavidade
     portal.style.opacity = '0';
 
     // Esconde o nome
