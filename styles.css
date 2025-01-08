@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle, #000, #111);
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradiente azul para roxo */
     color: #fff;
     overflow: hidden;
 }
@@ -24,14 +24,15 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portal (GIF carregado localmente) */
+/* Portal (GIF com transparência no fundo) */
 .portal {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./portal.gif') center/cover no-repeat;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Tamanho do portal */
+    height: 80%;
+    transform: translate(-50%, -50%); /* Centraliza o portal */
+    background: url('./portal.gif') center/contain no-repeat; /* Portal GIF com transparência */
     z-index: 5;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Suavidade do zoom */
 }
