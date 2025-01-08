@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawly Confetti Animation</title>
+    <title>Pawly</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +14,55 @@
 
     <!-- Conteúdo principal do site -->
     <div class="site-content">
-        <h1>Bem-vindo ao site principal!</h1>
-        <p>Descubra o mundo incrível de Pawly!</p>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#features">Funcionalidades</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home">
+            <h1>Bem-vindo ao Pawly!</h1>
+            <p>A moeda que une diversão e tecnologia.</p>
+        </section>
+
+        <section id="about">
+            <h2>Sobre Pawly</h2>
+            <p>Pawly é uma memecoin que combina inovação e entretenimento. Descubra o poder da comunidade e o potencial das criptomoedas.</p>
+        </section>
+
+        <section id="features">
+            <h2>Funcionalidades</h2>
+            <ul>
+                <li>Rápida e segura</li>
+                <li>Economia baseada na diversão</li>
+                <li>Comunidade ativa</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 Pawly. Todos os direitos reservados.</p>
+        </footer>
     </div>
 
     <!-- Importando biblioteca de confetes -->
