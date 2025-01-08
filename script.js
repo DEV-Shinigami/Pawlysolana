@@ -14,8 +14,8 @@ nameElement.addEventListener('click', () => {
     // Faz o nome desaparecer
     nameElement.style.opacity = '0';
 
-    // Mostra o conteúdo principal do site após 1 segundo
+    // Mostra o conteúdo principal após 1 segundo
     setTimeout(() => {
-        siteContent.style.opacity = '1';
+        siteContent.classList.add('visible');
     }, 1000);
 });
