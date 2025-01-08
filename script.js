@@ -1,20 +1,25 @@
 // Seleciona os elementos necessários
 const nameElement = document.querySelector('.name');
+const portalLeft = document.querySelector('.portal-left');
+const portalRight = document.querySelector('.portal-right');
 const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no nome "PAWLY"
 nameElement.addEventListener('click', () => {
-    // Explosão de confetes
-    confetti({
-        particleCount: 200,
-        spread: 70,
-        origin: { y: 0.6 } // Define a posição inicial dos confetes
-    });
+    // Remove os portais com expansão
+    portalLeft.style.transition = 'transform 1s ease-in-out, opacity 1s';
+    portalRight.style.transition = 'transform 1s ease-in-out, opacity 1s';
 
-    // Faz o nome desaparecer
+    portalLeft.style.transform = 'scale(10)';
+    portalRight.style.transform = 'scale(10)';
+
+    portalLeft.style.opacity = '0';
+    portalRight.style.opacity = '0';
+
+    // Esconde o nome
     nameElement.style.opacity = '0';
 
-    // Mostra o conteúdo principal após 1 segundo
+    // Exibe o conteúdo principal
     setTimeout(() => {
         siteContent.classList.add('visible');
     }, 1000);
