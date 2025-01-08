@@ -5,7 +5,7 @@ const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no nome "PAWLY"
 nameElement.addEventListener('click', () => {
-    // Remove o portal com suavidade
+    // Faz o portal (iframe) desaparecer suavemente
     portal.style.opacity = '0';
 
     // Esconde o nome
