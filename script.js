@@ -4,7 +4,7 @@ const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no olho
 eye.addEventListener('click', () => {
-    // Faz o olho desaparecer suavemente com efeito de zoom
+    // Faz o efeito de zoom e desaparecimento
     eye.style.transform = 'scale(10)'; // Zoom no olho
     eye.style.opacity = '0'; // Desaparece suavemente
 
