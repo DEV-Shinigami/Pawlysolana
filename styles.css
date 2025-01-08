@@ -24,14 +24,14 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Portal (GIF) cobrindo a página inteira */
+/* Portal como fundo da página */
 .portal {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta o GIF para preencher a tela */
+    background: url('https://giphy.com/gifs/futur21-circle-futur-future21-AI08LNU0F1J9QSsX5N') center/cover no-repeat;
     z-index: 5;
     transition: opacity 1s ease-in-out;
 }
