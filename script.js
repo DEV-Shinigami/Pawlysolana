@@ -1,24 +1,21 @@
 // Seleciona os elementos necessários
 const nameElement = document.querySelector('.name');
-const leftDoor = document.querySelector('.door.left');
-const rightDoor = document.querySelector('.door.right');
 const siteContent = document.querySelector('.site-content');
 
 // Adiciona evento de clique no nome "PAWLY"
 nameElement.addEventListener('click', () => {
+    // Explosão de confetes
+    confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 } // Define a posição inicial dos confetes
+    });
+
     // Faz o nome desaparecer
     nameElement.style.opacity = '0';
 
-    // Abre as portas (de dentro para as extremidades)
-    leftDoor.style.transform = 'rotateY(90deg)';
-    rightDoor.style.transform = 'rotateY(-90deg)';
-
-    // Aguarda a animação das portas antes de fazê-las desaparecer
+    // Mostra o conteúdo principal do site após 1 segundo
     setTimeout(() => {
-        leftDoor.classList.add('hidden');
-        rightDoor.classList.add('hidden');
-
-        // Mostra o conteúdo principal do site
         siteContent.style.opacity = '1';
-    }, 1000); // Tempo da animação das portas
+    }, 1000);
 });
