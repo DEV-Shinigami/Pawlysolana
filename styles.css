@@ -2,23 +2,31 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('./olho.webp') center/cover no-repeat; /* Imagem de fundo com o olho */
+    background: #000; /* Fundo preto */
     color: #fff;
     overflow: hidden;
 }
 
-/* Área clicável do olho */
-.eye-area {
+/* Tela inicial com a imagem */
+.eye {
     position: absolute;
-    top: 50%; /* Ajuste conforme necessário */
-    left: 50%; /* Ajuste conforme necessário */
-    width: 15%; /* Largura da área clicável, ajustada ao tamanho do olho */
-    height: 15%; /* Altura da área clicável */
-    transform: translate(-50%, -50%);
-    border-radius: 50%; /* Forma circular */
-    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./olho.webp') center/cover no-repeat; /* Imagem do olho */
     z-index: 10;
-    transition: transform 1.5s ease-in-out, opacity 1s ease-in-out; /* Suavidade no zoom */
+    overflow: hidden;
+    cursor: pointer; /* Indica que a imagem é clicável */
+}
+
+/* Fragmentos gerados para desfragmentação */
+.fragment {
+    position: absolute;
+    width: 50px; /* Largura do fragmento */
+    height: 50px; /* Altura do fragmento */
+    background: inherit; /* Usa a imagem como fundo */
+    transition: transform 1s ease, opacity 1s ease; /* Suavidade ao espalhar */
 }
 
 /* Site principal */
