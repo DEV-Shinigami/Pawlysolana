@@ -100,11 +100,12 @@ body.night-mode {
     cursor: pointer;
 }
 
-/* Estilo do botão de alternância */
+/* Botão de Alternância de Tema */
 .theme-toggle {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 20px; /* Ajuste para o cabeçalho */
+    right: 20px; /* Alinhado à direita */
+    z-index: 2000;
 }
 
 #theme-toggle-button {
@@ -120,35 +121,44 @@ body.night-mode {
     transform: scale(1.2);
 }
 
-/* Estilo para o Modo Noturno */
-body.night-mode {
-    background: #000000;
-    color: #bdbdbd;
-    transition: background 0.5s, color 0.5s;
+/* Olhos no Fundo */
+.random-eyes {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    opacity: 0.7;
+    animation: fadeInOut 5s ease-in-out infinite, moveEyes 10s linear infinite;
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* Olhos Brilhantes */
-.glowing-eyes {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 1000;
+/* Animação de Fade */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
-.glowing-eyes .eye {
-    width: 20px;
-    height: 20px;
-    background: #FFD700;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
-    margin: 0 10px;
-    display: inline-block;
-}
-
-body.night-mode .glowing-eyes {
-    display: flex;
+/* Movimento Aleatório */
+@keyframes moveEyes {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, -30px);
+    }
+    50% {
+        transform: translate(-40px, 20px);
+    }
+    75% {
+        transform: translate(30px, -40px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 
