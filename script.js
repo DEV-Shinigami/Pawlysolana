@@ -95,20 +95,40 @@ document.querySelector('.language-selector select').addEventListener('change', (
     switchLanguage(e.target.value); // Passa o idioma selecionado para a função
 });
 
-// Selecionar o botão de alternância de tema
-const themeToggleButton = document.getElementById('theme-toggle-button');
-// Selecionar o corpo do documento
 const body = document.body;
+const themeToggleButton = document.getElementById('theme-toggle-button');
 
-// Adicionar evento de clique ao botão de alternância
+// Alternar Modo Noturno
 themeToggleButton.addEventListener('click', () => {
-    // Alternar a classe 'night-mode' no corpo
     body.classList.toggle('night-mode');
 
-    // Alterar o texto ou ícone do botão dependendo do modo ativo
+    // Alterar ícone do botão
+    themeToggleButton.textContent = body.classList.contains('night-mode') ? '☀️' : '🌙';
+
+    // Adicionar olhos aleatoriamente no modo noturno
     if (body.classList.contains('night-mode')) {
-        themeToggleButton.textContent = '☀️'; // Modo diurno
+        for (let i = 0; i < 5; i++) {
+            createRandomEyes();
+        }
     } else {
-        themeToggleButton.textContent = '🌙'; // Modo noturno
+        // Remover olhos no modo claro
+        document.querySelectorAll('.random-eyes').forEach(eye => eye.remove());
     }
 });
+
+// Função para criar olhos em posições aleatórias
+function createRandomEyes() {
+    const eye = document.createElement('img');
+    eye.src = 'olhos.png'; // Caminho da imagem de olho
+    eye.className = 'random-eyes';
+    eye.style.top = Math.random() * window.innerHeight + 'px';
+    eye.style.left = Math.random() * window.innerWidth + 'px';
+
+    body.appendChild(eye);
+
+    // Remover olhos após 10 segundos
+    setTimeout(() => {
+        eye.remove();
+    }, 10000);
+}
+
