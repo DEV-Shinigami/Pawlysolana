@@ -94,3 +94,21 @@ function switchLanguage(lang) {
 document.querySelector('.language-selector select').addEventListener('change', (e) => {
     switchLanguage(e.target.value); // Passa o idioma selecionado para a função
 });
+
+// Selecionar o botão de alternância de tema
+const themeToggleButton = document.getElementById('theme-toggle-button');
+// Selecionar o corpo do documento
+const body = document.body;
+
+// Adicionar evento de clique ao botão de alternância
+themeToggleButton.addEventListener('click', () => {
+    // Alternar a classe 'night-mode' no corpo
+    body.classList.toggle('night-mode');
+
+    // Alterar o texto ou ícone do botão dependendo do modo ativo
+    if (body.classList.contains('night-mode')) {
+        themeToggleButton.textContent = '☀️'; // Modo diurno
+    } else {
+        themeToggleButton.textContent = '🌙'; // Modo noturno
+    }
+});
