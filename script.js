@@ -25,7 +25,7 @@ const App = {
     },
     createRandomEyes() {
         const eye = document.createElement("img");
-        eye.src = "path-to-eye-image.png";
+        eye.src = "olhos.png";
         eye.className = "random-eyes";
         eye.style.top = Math.random() * window.innerHeight + "px";
         eye.style.left = Math.random() * window.innerWidth + "px";
