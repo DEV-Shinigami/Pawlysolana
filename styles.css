@@ -1,80 +1,216 @@
-/* Estilos gerais */
+/* Body: Configurações gerais */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #202020, #101010 70%, #000); /* Gradiente escuro */
-}
-
-/* Contêiner da entrada */
-.entry-container {
-    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #1E3A8A, #3A1E68, #6B21A8);
+    color: #ffffff;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    overflow-x: hidden;
 }
 
-/* Nome "Pawly" com efeito 3D */
-.name {
-    font-size: 6rem;
+#unique-header {
+    position: fixed;
+    top: 0;
+    left: 0; /* Garante que o header esteja alinhado ao lado esquerdo */
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100px; /* Ajusta a altura para um tamanho consistente */
+    padding: 0 2rem; /* Padding interno */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+    background: transparent; /* Fundo transparente */
+    display: flex;
+    justify-content: space-between; /* Espaça os itens uniformemente */
+    align-items: center; /* Alinha os itens verticalmente */
+    z-index: 1000; /* Mantém acima do restante do conteúdo */
+    animation: gradientMove 6s infinite alternate;
+}
+
+
+/* Logotipo Flutuante */
+.floating-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-logo img {
+    max-width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.floating-logo .logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-
-    /* Efeito 3D */
-    text-shadow: 
-        2px 2px 2px #000, 
-        4px 4px 6px rgba(0, 0, 0, 0.8), 
-        0 0 15px rgba(255, 255, 255, 0.4);
-
-    /* Animação de iluminação suave */
-    animation: glow 3s infinite alternate;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
-/* Animação de iluminação no texto */
-@keyframes glow {
+.header-logo,
+.logo-text {
+    outline: none; /* Remove o contorno ao ser clicado */
+    user-select: none; /* Impede a seleção de texto */
+    cursor: default; /* Define o cursor como padrão */
+}
+
+/* Navegação Flutuante */
+.floating-nav {
+    display: flex;
+    gap: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-nav a:hover {
+    background-color: #FFD700;
+    color: #1E3A8A;
+    transform: scale(1.2);
+}
+
+/* Seleção de Idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove preenchimentos extras */
+    position: relative; /* Garante que fique dentro do fluxo */
+    animation: float 3s ease-in-out infinite;
+}
+
+.language-selector select {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    color: #1E3A8A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero-title {
+    font-size: 8rem;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    color: #FFFFFF;
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+
+.hero-paragraph {
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.hero-logo {
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Animações */
+@keyframes gradientMove {
     0% {
-        text-shadow: 
-            2px 2px 2px #000, 
-            4px 4px 6px rgba(0, 0, 0, 0.8), 
-            0 0 15px rgba(255, 0, 0, 0.6); /* Vermelho */
-        color: #ff4d4d;
-    }
-    50% {
-        text-shadow: 
-            2px 2px 2px #000, 
-            4px 4px 6px rgba(0, 0, 0, 0.8), 
-            0 0 15px rgba(0, 255, 0, 0.6); /* Verde */
-        color: #4dff4d;
+        background-position: 0% 50%;
     }
     100% {
-        text-shadow: 
-            2px 2px 2px #000, 
-            4px 4px 6px rgba(0, 0, 0, 0.8), 
-            0 0 15px rgba(0, 0, 255, 0.6); /* Azul */
-        color: #4d4dff;
+        background-position: 100% 50%;
     }
 }
 
-/* Site principal */
-.site-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    padding: 2rem;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-.site-content.visible {
-    display: block;
-    opacity: 1;
+/* Reação ao Rolar */
+#unique-header.small {
+    height: 70px; /* Reduz a altura ao rolar */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente ao rolar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#unique-header.small .floating-logo img {
+    transform: scale(0.8); /* Reduz o logotipo */
+}
+
+#unique-header.small .floating-nav a {
+    font-size: 0.9rem; /* Ajusta o tamanho dos links */
+}
+
+/* Links que exibem pequenos ossos ao passar o mouse */
+a:hover::after {
+    content: "🐾";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    font-size: 20px;
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Para navegadores compatíveis com scrollbar */
+body::-webkit-scrollbar {
+    width: 5px; /* Largura da barra */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Cor da barra */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Cor ao passar o mouse */
+}
+
+/* Footer */
+footer {
+    background: transparent;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #unique-header {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .floating-nav {
+        gap: 1rem;
+    }
+
+    .floating-nav a {
+        font-size: 0.8rem;
+    }
 }
