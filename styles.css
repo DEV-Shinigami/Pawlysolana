@@ -100,7 +100,7 @@ body.night-mode {
     cursor: pointer;
 }
 
-/* Botão de Alternância de Tema */
+/* Estilo do botão de alternância */
 .theme-toggle {
     position: absolute;
     top: 10px;
@@ -119,6 +119,38 @@ body.night-mode {
 #theme-toggle-button:hover {
     transform: scale(1.2);
 }
+
+/* Estilo para o Modo Noturno */
+body.night-mode {
+    background: #000000;
+    color: #bdbdbd;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Olhos Brilhantes */
+.glowing-eyes {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1000;
+}
+
+.glowing-eyes .eye {
+    width: 20px;
+    height: 20px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+body.night-mode .glowing-eyes {
+    display: flex;
+}
+
 
 /* Hero Section */
 .hero {
@@ -213,30 +245,6 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
-}
-
-/* Olhos Brilhantes */
-.glowing-eyes {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 1000;
-}
-
-.glowing-eyes .eye {
-    width: 20px;
-    height: 20px;
-    background: #FFD700;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
-    margin: 0 10px;
-    display: inline-block;
-}
-
-body.night-mode .glowing-eyes {
-    display: flex;
 }
 
 /* Footer */
