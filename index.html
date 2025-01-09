@@ -9,54 +9,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
     <header id="unique-header">
-    <div class="floating-logo">
-        <img src="Pawlylogo.png" alt="Pawly Logo">
-        <span class="logo-text">Pawly</span>
-    </div>
+        <div class="floating-logo">
+            <img src="Pawlylogo.png" alt="Pawly Logo">
+            <span class="logo-text">Pawly</span>
+        </div>
 
-    <nav class="floating-nav">
-        <a href="#home" data-en="Home" data-pt="Início" data-es="Inicio" data-fr="Accueil">Home</a>
-        <a href="#about" data-en="About" data-pt="Sobre" data-es="Acerca" data-fr="À propos">About</a>
-        <a href="#tokenomics" data-en="Tokenomics" data-pt="Tokenomia" data-es="Tokenomía" data-fr="Tokenomique">Tokenomics</a>
-        <a href="#how-to-buy" data-en="How to Buy" data-pt="Como Comprar" data-es="Cómo Comprar" data-fr="Comment Acheter">How to Buy</a>
-        <a href="#contact" data-en="Contact" data-pt="Contacto" data-es="Contacto" data-fr="Contact">Contact</a>
-    </nav>
+        <nav class="floating-nav">
+            <a href="#home" data-en="Home" data-pt="Início" data-es="Inicio" data-fr="Accueil">Home</a>
+            <a href="#about" data-en="About" data-pt="Sobre" data-es="Acerca" data-fr="À propos">About</a>
+            <a href="#tokenomics" data-en="Tokenomics" data-pt="Tokenomia" data-es="Tokenomía" data-fr="Tokenomique">Tokenomics</a>
+            <a href="#how-to-buy" data-en="How to Buy" data-pt="Como Comprar" data-es="Cómo Comprar" data-fr="Comment Acheter">How to Buy</a>
+            <a href="#contact" data-en="Contact" data-pt="Contacto" data-es="Contacto" data-fr="Contact">Contact</a>
+        </nav>
 
-    <div class="language-selector">
-        <select>
-            <option value="en">English</option>
-            <option value="pt">Português</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-        </select>
-    </div>
-</header>
+        <div class="language-selector">
+            <select>
+                <option value="en">English</option>
+                <option value="pt">Português</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
 
-    
+        <div class="theme-toggle">
+            <button id="theme-toggle-button" aria-label="Toggle Night Mode">🌙</button>
+        </div>
+    </header>
+
     <div class="container">
         <!-- Home Section -->
-       <section id="home" class="hero">
-    <h1 data-en="PAWLY" data-pt="PAWLY" data-es="PAWLY" data-fr="PAWLY" class="hero-title" id="interactive-title">
-        PAWLY
-    </h1>
-    <p data-en="The memecoin with a mission to help animals and make a difference."
-       data-pt="A memecoin com a missão de ajudar animais e fazer a diferença."
-       data-es="La memecoin con una misión para ayudar a los animales y marcar la diferencia."
-       data-fr="La memecoin avec une mission d’aider les animaux et faire une différence." class="hero-paragraph">
-        The memecoin with a mission to help animals and make a difference.
-    </p>
-    <img src="Pawlylogo.png" alt="Pawly Logo" class="hero-logo">
+        <section id="home" class="hero">
+            <h1 data-en="PAWLY" data-pt="PAWLY" data-es="PAWLY" data-fr="PAWLY" class="hero-title" id="interactive-title">
+                PAWLY
+            </h1>
+            <p data-en="The memecoin with a mission to help animals and make a difference."
+                data-pt="A memecoin com a missão de ajudar animais e fazer a diferença."
+                data-es="La memecoin con una misión para ayudar a los animales y marcar la diferencia."
+                data-fr="La memecoin avec une mission d’aider les animaux et faire une différence." class="hero-paragraph">
+                The memecoin with a mission to help animals and make a difference.
+            </p>
+            <img src="Pawlylogo.png" alt="Pawly Logo" class="hero-logo">
+        </section>
 
-</section>
         <!-- About Section -->
         <section id="about">
             <h2 data-en="About Pawly" data-pt="Sobre o Pawly" data-es="Acerca de Pawly" data-fr="À propos de Pawly">About Pawly</h2>
             <p data-en="Pawly is not just a memecoin; it’s a movement. Dedicated to supporting animal rescues and foundations like IRA, Pawly brings purpose to the blockchain."
-               data-pt="Pawly não é apenas uma memecoin; é um movimento. Dedicado a apoiar resgates de animais e fundações como a IRA, Pawly traz propósito ao blockchain."
-               data-es="Pawly no es solo una memecoin; es un movimiento. Dedicado a apoyar rescates de animales y fundaciones como IRA, Pawly da propósito a la blockchain."
-               data-fr="Pawly n’est pas seulement une memecoin ; c’est un mouvement. Dédié au soutien des sauvetages d’animaux et des fondations comme IRA, Pawly donne un sens à la blockchain.">
+                data-pt="Pawly não é apenas uma memecoin; é um movimento. Dedicado a apoiar resgates de animais e fundações como a IRA, Pawly traz propósito ao blockchain."
+                data-es="Pawly no es solo una memecoin; es un movimiento. Dedicado a apoyar rescates de animales y fundaciones como IRA, Pawly da propósito a la blockchain."
+                data-fr="Pawly n’est pas seulement une memecoin ; c’est un mouvement. Dédié au soutien des sauvetages d’animaux et des fondations comme IRA, Pawly donne un sens à la blockchain.">
                 Pawly is not just a memecoin; it’s a movement. Dedicated to supporting animal rescues and foundations like IRA, Pawly brings purpose to the blockchain.
             </p>
         </section>
@@ -65,9 +67,9 @@
         <section id="tokenomics">
             <h2 data-en="Tokenomics" data-pt="Tokenomia" data-es="Tokenomía" data-fr="Tokenomique">Tokenomics</h2>
             <p data-en="Learn about the supply distribution and how Pawly contributes to its mission:"
-               data-pt="Saiba mais sobre a distribuição de tokens e como Pawly contribui para a sua missão:"
-               data-es="Descubre la distribución de tokens y cómo Pawly contribuye a su misión:"
-               data-fr="Découvrez la répartition des tokens et comment Pawly contribue à sa mission :">
+                data-pt="Saiba mais sobre a distribuição de tokens e como Pawly contribui para a sua missão:"
+                data-es="Descubre la distribución de tokens y cómo Pawly contribuye a su misión:"
+                data-fr="Découvrez la répartition des tokens et comment Pawly contribue à sa mission :">
                 Learn about the supply distribution and how Pawly contributes to its mission:
             </p>
             <ul>
@@ -79,52 +81,51 @@
         </section>
 
         <!-- How to Buy Section -->
-<section id="how-to-buy">
-    <h2 data-en="How to Buy" data-pt="Como Comprar" data-es="Cómo Comprar" data-fr="Comment Acheter">
-        How to Buy
-    </h2>
-    <p data-en="Buying Pawly is simple and secure. Follow these steps:"
-       data-pt="Comprar Pawly é simples e seguro. Siga estes passos:"
-       data-es="Comprar Pawly es simple y seguro. Sigue estos pasos:"
-       data-fr="Acheter Pawly est simple et sécurisé. Suivez ces étapes :">
-        Buying Pawly is simple and secure. Follow these steps:
-    </p>
-    <ol>
-        <li data-en="Step 1: Create a cryptocurrency wallet."
-            data-pt="Passo 1: Crie uma carteira de criptomoedas."
-            data-es="Paso 1: Crea una billetera de criptomonedas."
-            data-fr="Étape 1 : Créez un portefeuille de cryptomonnaie.">
-            Step 1: Create a cryptocurrency wallet.
-        </li>
-        <li data-en="Step 2: Purchase BNB or ETH on an exchange."
-            data-pt="Passo 2: Compre BNB ou ETH numa exchange."
-            data-es="Paso 2: Compra BNB o ETH en un intercambio."
-            data-fr="Étape 2 : Achetez des BNB ou ETH sur un échange.">
-            Step 2: Purchase BNB or ETH on an exchange.
-        </li>
-        <li data-en="Step 3: Swap BNB/ETH for Pawly on our platform."
-            data-pt="Passo 3: Troque BNB/ETH por Pawly na nossa plataforma."
-            data-es="Paso 3: Intercambia BNB/ETH por Pawly en nuestra plataforma."
-            data-fr="Étape 3 : Échangez BNB/ETH contre Pawly sur notre plateforme.">
-            Step 3: Swap BNB/ETH for Pawly on our platform.
-        </li>
-    </ol>
-    <p data-en="Need help? Check out our detailed guide or contact support."
-       data-pt="Precisa de ajuda? Confira o nosso guia detalhado ou entre em contato com o suporte."
-       data-es="¿Necesitas ayuda? Consulta nuestra guía detallada o contacta con soporte."
-       data-fr="Besoin d’aide ? Consultez notre guide détaillé ou contactez le support.">
-        Need help? Check out our detailed guide or contact support.
-    </p>
-</section>
-
+        <section id="how-to-buy">
+            <h2 data-en="How to Buy" data-pt="Como Comprar" data-es="Cómo Comprar" data-fr="Comment Acheter">
+                How to Buy
+            </h2>
+            <p data-en="Buying Pawly is simple and secure. Follow these steps:"
+                data-pt="Comprar Pawly é simples e seguro. Siga estes passos:"
+                data-es="Comprar Pawly es simple y seguro. Sigue estos pasos:"
+                data-fr="Acheter Pawly est simple et sécurisé. Suivez ces étapes :">
+                Buying Pawly is simple and secure. Follow these steps:
+            </p>
+            <ol>
+                <li data-en="Step 1: Create a cryptocurrency wallet."
+                    data-pt="Passo 1: Crie uma carteira de criptomoedas."
+                    data-es="Paso 1: Crea una billetera de criptomonedas."
+                    data-fr="Étape 1 : Créez un portefeuille de cryptomonnaie.">
+                    Step 1: Create a cryptocurrency wallet.
+                </li>
+                <li data-en="Step 2: Purchase BNB or ETH on an exchange."
+                    data-pt="Passo 2: Compre BNB ou ETH numa exchange."
+                    data-es="Paso 2: Compra BNB o ETH en un intercambio."
+                    data-fr="Étape 2 : Achetez des BNB ou ETH sur un échange.">
+                    Step 2: Purchase BNB or ETH on an exchange.
+                </li>
+                <li data-en="Step 3: Swap BNB/ETH for Pawly on our platform."
+                    data-pt="Passo 3: Troque BNB/ETH por Pawly na nossa plataforma."
+                    data-es="Paso 3: Intercambia BNB/ETH por Pawly en nuestra plataforma."
+                    data-fr="Étape 3 : Échangez BNB/ETH contre Pawly sur notre plateforme.">
+                    Step 3: Swap BNB/ETH for Pawly on our platform.
+                </li>
+            </ol>
+            <p data-en="Need help? Check out our detailed guide or contact support."
+                data-pt="Precisa de ajuda? Confira o nosso guia detalhado ou entre em contato com o suporte."
+                data-es="¿Necesitas ayuda? Consulta nuestra guía detallada o contacta con soporte."
+                data-fr="Besoin d’aide ? Consultez notre guide détaillé ou contactez le support.">
+                Need help? Check out our detailed guide or contact support.
+            </p>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <h2 data-en="Contact Us" data-pt="Contacte-nos" data-es="Contáctenos" data-fr="Contactez-nous">Contact Us</h2>
             <p data-en="Have questions? Reach out to us on our social channels or via email:"
-               data-pt="Tem perguntas? Fale conosco através dos nossos canais sociais ou por email:"
-               data-es="¿Tienes preguntas? Contáctanos en nuestros canales sociales o por correo electrónico:"
-               data-fr="Vous avez des questions ? Contactez-nous sur nos réseaux sociaux ou par email :">
+                data-pt="Tem perguntas? Fale conosco através dos nossos canais sociais ou por email:"
+                data-es="¿Tienes preguntas? Contáctanos en nuestros canales sociales o por correo electrónico:"
+                data-fr="Vous avez des questions ? Contactez-nous sur nos réseaux sociaux ou par email :">
                 Have questions? Reach out to us on our social channels or via email:
             </p>
             <ul>
@@ -150,12 +151,17 @@
         </section>
     </div>
 
+    <div class="glowing-eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+    </div>
+
     <footer>
-        <p data-en="&copy; 2024 Pawly. All Rights Reserved."
-           data-pt="&copy; 2024 Pawly. Todos os direitos reservados."
-           data-es="&copy; 2024 Pawly. Todos los derechos reservados."
-           data-fr="&copy; 2024 Pawly. Tous droits réservés.">
-           &copy; 2025 Pawly. All Rights Reserved.
+        <p data-en="&copy; 2025 Pawly. All Rights Reserved."
+            data-pt="&copy; 2025 Pawly. Todos os direitos reservados."
+            data-es="&copy; 2025 Pawly. Todos los derechos reservados."
+            data-fr="&copy; 2025 Pawly. Tous droits réservés.">
+            &copy; 2025 Pawly. All Rights Reserved.
         </p>
     </footer>
 
