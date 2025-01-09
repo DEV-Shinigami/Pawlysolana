@@ -1,37 +1,19 @@
-// Seleção de elementos
-const title = document.getElementById("interactive-title");
-const vibrantColors = ["#FF5733", "#28B463", "#3498DB", "#9B59B6", "#FFD700"];
-
-// Interatividade no título
-title.addEventListener("mouseover", () => {
-    const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-    title.style.color = randomColor;
-    title.style.transform = "scale(1.2)";
-    title.style.textShadow = `0 0 10px ${randomColor}`;
-});
-
-title.addEventListener("mouseout", () => {
-    title.style.color = "#FFFFFF";
-    title.style.transform = "scale(1)";
-    title.style.textShadow = "none";
-});
-
-    // Função personalizada para scroll suave
-    function smoothScroll(target, duration) {
-        const element = document.documentElement || document.body; // Elemento principal do documento
-        const start = element.scrollTop; // Posição inicial do scroll
-        const targetPosition = target.getBoundingClientRect().top; // Posição do alvo em relação à viewport
+const App = {
+    vibrantColors: ["#FF5733", "#28B463", "#3498DB", "#9B59B6", "#FFD700"],
+    smoothScroll(target, duration) {
+        const element = document.documentElement || document.body;
+        const start = element.scrollTop;
+        const targetPosition = target.getBoundingClientRect().top;
         let startTime = null;
 
         function animation(currentTime) {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
             const run = ease(timeElapsed, start, targetPosition, duration);
-            element.scrollTop = run; // Atualiza a posição do scroll
+            element.scrollTop = run;
             if (timeElapsed < duration) requestAnimationFrame(animation);
         }
 
-        // Função de easing para suavizar a animação
         function ease(t, b, c, d) {
             t /= d / 2;
             if (t < 1) return c / 2 * t * t + b;
@@ -40,95 +22,52 @@ title.addEventListener("mouseout", () => {
         }
 
         requestAnimationFrame(animation);
-    }
+    },
+    createRandomEyes() {
+        const eye = document.createElement("img");
+        eye.src = "path-to-eye-image.png";
+        eye.className = "random-eyes";
+        eye.style.top = Math.random() * window.innerHeight + "px";
+        eye.style.left = Math.random() * window.innerWidth + "px";
 
-    // Adiciona o evento de clique aos links do cabeçalho
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
+        document.body.appendChild(eye);
 
-            const targetId = this.getAttribute("href"); // Obtém o ID do alvo
-            const target = document.querySelector(targetId);
+        setTimeout(() => {
+            eye.remove();
+        }, 10000);
+    },
+    init() {
+        const title = document.getElementById("interactive-title");
+        const themeToggleButton = document.getElementById("theme-toggle-button");
 
-            if (target) {
-                smoothScroll(target, 1000); // Define a duração (1000ms = 1 segundo)
+        // Título interativo
+        title.addEventListener("mouseover", () => {
+            const randomColor = this.vibrantColors[Math.floor(Math.random() * this.vibrantColors.length)];
+            title.style.color = randomColor;
+            title.style.transform = "scale(1.2)";
+            title.style.textShadow = `0 0 10px ${randomColor}`;
+        });
+
+        title.addEventListener("mouseout", () => {
+            title.style.color = "#FFFFFF";
+            title.style.transform = "scale(1)";
+            title.style.textShadow = "none";
+        });
+
+        // Alternância de tema
+        themeToggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("night-mode");
+            themeToggleButton.textContent = document.body.classList.contains("night-mode") ? "☀️" : "🌙";
+
+            if (document.body.classList.contains("night-mode")) {
+                for (let i = 0; i < 5; i++) {
+                    this.createRandomEyes();
+                }
+            } else {
+                document.querySelectorAll(".random-eyes").forEach((eye) => eye.remove());
             }
         });
-    });
+    },
+};
 
- // Garante que a página volte ao topo ao recarregar
-    window.addEventListener("beforeunload", function () {
-        window.scrollTo(0, 0); // Move o scroll para o topo da página
-    });
-
-document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} Pawly. All Rights Reserved.`;
-
-// Adiciona classe ao rolar a página
-window.addEventListener("scroll", () => {
-    const header = document.getElementById("unique-header");
-    if (window.scrollY > 50) {
-        header.classList.add("small");
-    } else {
-        header.classList.remove("small");
-    }
-});
-
-// Efeito parallax no background ao mover o mouse
-document.addEventListener("mousemove", (e) => {
-    const header = document.getElementById("unique-header");
-    const x = (e.clientX / window.innerWidth) * 10 - 5; // Movimento horizontal
-    const y = (e.clientY / window.innerHeight) * 10 - 5; // Movimento vertical
-    header.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-});
-
-function switchLanguage(lang) {
-    const elements = document.querySelectorAll('[data-en], [data-pt], [data-es], [data-fr]');
-    elements.forEach(el => {
-        // Atualiza o conteúdo com base no idioma, usando textContent para evitar execução de código
-        el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
-    });
-}
-
-
-// Adiciona o evento de alteração no seletor de idioma
-document.querySelector('.language-selector select').addEventListener('change', (e) => {
-    switchLanguage(e.target.value); // Passa o idioma selecionado para a função
-});
-
-const body = document.body;
-const themeToggleButton = document.getElementById('theme-toggle-button');
-
-// Alternar Modo Noturno
-themeToggleButton.addEventListener('click', () => {
-    body.classList.toggle('night-mode');
-
-    // Alterar ícone do botão
-    themeToggleButton.textContent = body.classList.contains('night-mode') ? '☀️' : '🌙';
-
-    // Adicionar olhos aleatoriamente no modo noturno
-    if (body.classList.contains('night-mode')) {
-        for (let i = 0; i < 5; i++) {
-            createRandomEyes();
-        }
-    } else {
-        // Remover olhos no modo claro
-        document.querySelectorAll('.random-eyes').forEach(eye => eye.remove());
-    }
-});
-
-// Função para criar olhos em posições aleatórias
-function createRandomEyes() {
-    const eye = document.createElement('img');
-    eye.src = 'olhos.png'; // Caminho da imagem de olho
-    eye.className = 'random-eyes';
-    eye.style.top = Math.random() * window.innerHeight + 'px';
-    eye.style.left = Math.random() * window.innerWidth + 'px';
-
-    body.appendChild(eye);
-
-    // Remover olhos após 10 segundos
-    setTimeout(() => {
-        eye.remove();
-    }, 10000);
-}
-
+document.addEventListener("DOMContentLoaded", () => App.init());
