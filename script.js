@@ -4,27 +4,31 @@ const siteContent = document.querySelector('.site-content');
 
 // Função para criar fragmentos da imagem
 function createFragments() {
-    const numFragments = 100; // Número de fragmentos
     const fragmentSize = 50; // Tamanho dos fragmentos
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
+    const columns = Math.ceil(containerWidth / fragmentSize);
+    const rows = Math.ceil(containerHeight / fragmentSize);
+
     // Cria os fragmentos
-    for (let i = 0; i < numFragments; i++) {
-        const fragment = document.createElement('div');
-        fragment.classList.add('fragment');
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < columns; col++) {
+            const fragment = document.createElement('div');
+            fragment.classList.add('fragment');
 
-        // Define a posição inicial do fragmento
-        const x = (i % (containerWidth / fragmentSize)) * fragmentSize;
-        const y = Math.floor(i / (containerWidth / fragmentSize)) * fragmentSize;
+            // Define a posição inicial e tamanho do fragmento
+            const x = col * fragmentSize;
+            const y = row * fragmentSize;
 
-        fragment.style.width = `${fragmentSize}px`;
-        fragment.style.height = `${fragmentSize}px`;
-        fragment.style.backgroundPosition = `-${x}px -${y}px`; // Alinha a imagem no fragmento
-        fragment.style.left = `${x}px`;
-        fragment.style.top = `${y}px`;
-
-        container.appendChild(fragment);
+            fragment.style.width = `${fragmentSize}px`;
+            fragment.style.height = `${fragmentSize}px`;
+            fragment.style.left = `${x}px`;
+            fragment.style.top = `${y}px`;
+            fragment.style.backgroundPosition = `-${x}px -${y}px`; // Alinha o fragmento com a imagem
+            fragment.style.backgroundSize = `${containerWidth}px ${containerHeight}px`;
+            container.appendChild(fragment);
+        }
     }
 }
 
