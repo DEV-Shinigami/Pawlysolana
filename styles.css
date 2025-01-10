@@ -99,11 +99,17 @@ body.night-mode {
     cursor: pointer;
 }
 
+/* Header-right container */
+.header-right {
+    display: flex;
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
 /* Botão de Alternância de Tema */
 .theme-toggle {
     display: flex;
     align-items: center;
-    margin-right: 1rem;
 }
 
 #theme-toggle-button {
@@ -113,6 +119,12 @@ body.night-mode {
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center; /* Centraliza o ícone no botão */
+    justify-content: center;
+    height: 40px; /* Altura consistente com o seletor */
+    width: 40px; /* Largura consistente */
+    border-radius: 50%; /* Torna o botão circular */
 }
 
 #theme-toggle-button:hover {
