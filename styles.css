@@ -97,6 +97,7 @@ body.night-mode {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
 }
 
 /* Header-right container */
@@ -125,6 +126,7 @@ body.night-mode {
     height: 40px; /* Altura consistente com o seletor */
     width: 40px; /* Largura consistente */
     border-radius: 50%; /* Torna o botão circular */
+    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
 }
 
 #theme-toggle-button:hover {
