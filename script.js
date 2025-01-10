@@ -39,9 +39,16 @@ const App = {
             eye.remove();
         }, 10000);
     },
+    switchLanguage(lang) {
+        const elements = document.querySelectorAll("[data-en], [data-pt], [data-es], [data-fr]");
+        elements.forEach((el) => {
+            el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+        });
+    },
     init() {
         const title = document.getElementById("interactive-title");
         const themeToggleButton = document.getElementById("theme-toggle-button");
+        const languageSelector = document.querySelector(".language-selector select");
 
         // Título interativo
         title.addEventListener("mouseover", () => {
@@ -71,7 +78,12 @@ const App = {
             }
         });
 
-        // Adiciona o evento de clique aos links do cabeçalho para scroll suave
+        // Troca de idioma
+        languageSelector.addEventListener("change", (e) => {
+            this.switchLanguage(e.target.value);
+        });
+
+        // Scroll suave nos links
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             anchor.addEventListener("click", (e) => {
                 e.preventDefault();
