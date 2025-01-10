@@ -105,6 +105,7 @@ body.night-mode {
     display: flex;
     align-items: center; /* Centraliza os itens verticalmente */
     gap: 1rem; /* Espaçamento entre os itens */
+    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
 }
 
 /* Botão de Alternância de Tema */
