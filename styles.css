@@ -88,7 +88,6 @@ body.night-mode {
     margin: 0;
     padding: 0;
     position: relative;
-    animation: float 3s ease-in-out infinite;
 }
 
 .language-selector select {
@@ -102,10 +101,9 @@ body.night-mode {
 
 /* Botão de Alternância de Tema */
 .theme-toggle {
-    position: absolute;
-    top: 20px; /* Ajuste para o cabeçalho */
-    right: 20px; /* Alinhado à direita */
-    z-index: 2000;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
 }
 
 #theme-toggle-button {
@@ -160,7 +158,6 @@ body.night-mode {
         transform: translate(0, 0);
     }
 }
-
 
 /* Hero Section */
 .hero {
