@@ -10,7 +10,7 @@ body {
 }
 
 body.night-mode {
-    background: #000000;
+    background: linear-gradient(to bottom, #000000, #1a1a1a, #2c2c2c);
     color: #bdbdbd;
 }
 
@@ -51,13 +51,6 @@ body.night-mode {
     letter-spacing: 1px;
 }
 
-.header-logo,
-.logo-text {
-    outline: none;
-    user-select: none;
-    cursor: default;
-}
-
 /* Navegação Flutuante */
 .floating-nav {
     display: flex;
@@ -82,14 +75,6 @@ body.night-mode {
 }
 
 /* Seleção de Idioma */
-.language-selector {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
 .language-selector select {
     padding: 0.5rem;
     background-color: #ffffff;
@@ -97,24 +82,10 @@ body.night-mode {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
-}
-
-/* Header-right container */
-.header-right {
-    display: flex;
-    align-items: center; /* Centraliza os itens verticalmente */
-    gap: 1rem; /* Espaçamento entre os itens */
-    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
 }
 
 /* Botão de Alternância de Tema */
-.theme-toggle {
-    display: flex;
-    align-items: center;
-}
-
-#theme-toggle-button {
+.theme-toggle button {
     background: none;
     border: none;
     color: white;
@@ -122,56 +93,15 @@ body.night-mode {
     cursor: pointer;
     transition: transform 0.2s ease;
     display: flex;
-    align-items: center; /* Centraliza o ícone no botão */
+    align-items: center;
     justify-content: center;
-    height: 40px; /* Altura consistente com o seletor */
-    width: 40px; /* Largura consistente */
-    border-radius: 50%; /* Torna o botão circular */
-    animation: float 3s ease-in-out infinite; /* Adiciona efeito flutuante */
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }
 
-#theme-toggle-button:hover {
+.theme-toggle button:hover {
     transform: scale(1.2);
-}
-
-/* Olhos no Fundo */
-.random-eyes {
-    position: absolute;
-    width: 120px;
-    height: auto;
-    opacity: 0.7;
-    animation: fadeInOut 5s ease-in-out infinite, moveEyes 10s linear infinite;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Animação de Fade */
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.7;
-    }
-}
-
-/* Movimento Aleatório */
-@keyframes moveEyes {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(50px, -30px);
-    }
-    50% {
-        transform: translate(-40px, 20px);
-    }
-    75% {
-        transform: translate(30px, -40px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
 }
 
 /* Hero Section */
@@ -219,54 +149,6 @@ body.night-mode {
     50% {
         transform: translateY(-10px);
     }
-}
-
-/* Reação ao Rolar */
-#unique-header.small {
-    height: 70px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-#unique-header.small .floating-logo img {
-    transform: scale(0.8);
-}
-
-#unique-header.small .floating-nav a {
-    font-size: 0.9rem;
-}
-
-/* Links que exibem pequenos ossos ao passar o mouse */
-a:hover::after {
-    content: "🐾";
-    position: absolute;
-    right: -20px;
-    top: 0;
-    font-size: 20px;
-    animation: bounce 0.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Para navegadores compatíveis com scrollbar */
-body::-webkit-scrollbar {
-    width: 5px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
 }
 
 /* Footer */
